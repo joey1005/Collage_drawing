@@ -7,9 +7,12 @@ html, body {
     min-width: 100%;
     min-height: 100%;
     background-color: black;
+    background-image:  url(media/galaxy.jpeg);
+    background-size: cover;
 }
 
 .bg {
+
     min-width: 100%;
     min-height: 100%;
     display:flex;
@@ -19,21 +22,25 @@ html, body {
     align-items: center;
 }
 
+
+
 #lightBall {
     position: absolute;
     max-width: 100%;
     max-height: 100%;
     mix-blend-mode: screen;
-    opacity: 0.6;
-    z-index: 1;
+    opacity: 1;
+   
 }
 
 #lightBall:hover {
     filter: brightness(200%);
-    opacity: 1;
+
 }
 
-#colorLines {
+
+
+ #color {
     position: absolute;
     left: 0;
     min-width: 100%;
@@ -41,48 +48,60 @@ html, body {
     max-width: 100%;
     max-height: 100%;
     align-self: center;
-    mix-blend-mode: screen;
-    opacity: 0.6;
-}
-
-#color {
-    position: absolute;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    align-self: center;
-    opacity: 0;
+    opacity: 0.2;
     mix-blend-mode: screen;
 }
 
-#color3 {
+#astronaut {
     position: absolute;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    align-self: center;
-    mix-blend-mode: screen;
-    opacity: 0;
+    max-width:15%;
+    left:10%;
+    top:15%;
+    animation-name: rightfloat;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
+
+
+@keyframes rightfloat {
+    from {transform: translateX(0px) translateY(-200px); opacity: 1;}
+    to {transform: translateX(400px) translateY(150px) rotate(360deg);opacity: 0;}
+}
+
+#spaceship {
+    position: absolute;
+    max-width:15%;
+    right:15%;
+    top:50%;
+    animation-name: leftfloat;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes leftfloat {
+    from {transform: translateX(200px) translateY(-200px); opacity: 1;}
+    to {transform: translateX(-400px) translateY(-30px) rotate(360deg);opacity: 0;}
+}
+
 
 #arrow {
     position: fixed;
-    right: 5%;
+    right: 19%;
     bottom: 5%;
-    width: 10%;
-    height: 10%;
+    width: 6%;
+    height: 6%;
 }
 
 #signal {
     position: fixed;
-    right: 6%;
+    right: 20%;
     bottom: 12%;
-    max-width: 10%;
-    max-height: 10%;
+    max-width: 7%;
+    max-height: 7%;
     color: lightgray;
     rotate: 18deg;
     font-weight: bold;
